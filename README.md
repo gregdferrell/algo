@@ -6,3 +6,4 @@ Solving fun problems with Python ...
 
 #### Summary of Problems
 * ic_15_fib.py: Find the nth fibonacci number.
+* get_num_islands.py: Find the number of islands in a 2 dimensional array.
