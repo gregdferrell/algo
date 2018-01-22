@@ -5,5 +5,6 @@ Solving fun problems with Python ...
 * The project is built using Python 3.6.2.
 
 #### Summary of Problems
-* ic_15_fib.py: Find the nth fibonacci number.
 * get_num_islands.py: Find the number of islands in a 2 dimensional array.
+# get_permutations.py: Get all permutations of a given list of items.
+* ic_15_fib.py: Find the nth fibonacci number.
