@@ -9,3 +9,4 @@ Solving fun problems with Python ...
 * get_num_islands.py: Find the number of islands in a 2 dimensional array.
 * get_permutations.py: Get all permutations of a given list of items.
 * ic_15_fib.py: Find the nth fibonacci number.
+* ic_21_find_unique_int_in_list.py: Given a list of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
