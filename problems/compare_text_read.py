@@ -1,99 +1,134 @@
 #
 # Problem: Compare original text vs what was altered and return a dict of
-# indexes mapping the matching elements from the original text array to the
-# altered text array.
+# indexes match_index_mapping the matching elements from the original text
+# array to the altered text array.
 #
-# TODO: ported from Java -make this pythonic
+# Algorithm should maximize the number of matches in sequential order.
 #
+# TODO: creating more permutations than needed when forking; fix this
+#       consider using tree data structure
+#       clean up this awful code in other ways
 
 
-def get_ordered_matches_map(text_original, text_altered):
-    results = {}
-    starting_match_index = MatchIndex(0, 0)
+def get_all_possible_mappings(orig, alt):
+    """
+    For each item in the original list, calculates a list of indexes in the
+    altered list that match the item in the original list.
+    :param orig: a list of items
+    :param alt: a list of items
+    :return: a list of lists, each element represents a list of indexes in the
+    altered list that the original list item matches.
+    """
+    all_mappings = []
+    for index_orig, item_orig in enumerate(orig):
+        indexes = []
+        for index_alt, item_alt in enumerate(alt):
+            if item_orig == item_alt:
+                indexes.append(index_alt)
+        all_mappings.append(indexes)
+    return all_mappings
 
-    # Search for matches until one of the lists has been fully searched through
-    while starting_match_index.index_original < len(
-            text_original) and starting_match_index.index_altered < len(
-        text_altered):
-        original_first_match_index = MatchIndex(-1, -1)
-        altered_first_match_index = MatchIndex(-1, -1)
 
-        # Starting at the last matched index, for each value in the original
-        # list, scan the remaining values in the altered list for a match
-        # and mark the index of the first match found.
-        for original_index in range(starting_match_index.index_original,
-                                    len(text_original)):
-            for altered_index in range(starting_match_index.index_altered,
-                                       len(text_altered)):
-                if text_original[original_index] == text_altered[altered_index]:
-                    original_first_match_index.index_original = original_index
-                    original_first_match_index.index_altered = altered_index
+def print_all_results(all_results):
+    print("\nAll Results:")
+    for index, result in enumerate(all_results):
+        print(str(index) + ":")
+        for match_index_mapping in result:
+            print(match_index_mapping)
+
+
+class MatchIndexMapping:
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+
+    def __str__(self):
+        return f"({self.key}, {self.value})"
+
+
+def sequential_compare(orig, alt, debug=False):
+    all_mappings = get_all_possible_mappings(orig, alt)
+    if debug:
+        print("\nAll Mappings:\n" + str(all_mappings))
+    results = []
+    for i, index_list in enumerate(all_mappings):
+        # If our index list is empty, proceed to next match_index_mapping array
+        if not index_list:
+            continue
+
+        # If there are no root nodes, create one from this index list
+        if not results:
+            results.append([MatchIndexMapping(i, index_list[0])])
+            continue
+
+        # Append lowest possible index from index_list to each result.
+        #
+        # This will either result in either:
+        # 1. Simply appending it to the end of a result or
+        # 2. Inserting it into the middle in which case we'll fork the
+        # result into a copy and insert it there, blowing away the remaining
+        # elements.
+        forked_results = []
+        for result in results:
+            next_result = False
+            for index in index_list:
+                for mim_index, match_index_mapping in enumerate(result):
+                    if index > match_index_mapping.value:
+                        if len(result) - 1 == mim_index:
+                            # Append this to the end of the result and go to the
+                            # next result
+                            result.append(MatchIndexMapping(i, index))
+                            next_result = True
+                            break
+                        else:
+                            # Fork the result and insert this in the middle,
+                            # blowing away the other results. Proceed to the
+                            # next index to see if we need to fork again
+                            forked_list = result[:mim_index + 1]
+                            forked_list.append(MatchIndexMapping(i, index))
+                            forked_results.append(forked_list)
+                            # break
+                if next_result:
                     break
 
-            if original_first_match_index.is_set():
+        if forked_results:
+            results.extend(forked_results)
+
+        # If nothing in this index was added to an existing result, then
+        # create a new root node if no nodes exist whose initial value is less
+        # than the smallest value in the array
+        for result in results:
+            initial_value = result[0].value
+            first_value_from_array = index_list[0]
+            if initial_value <= first_value_from_array:
                 break
+        else:
+            results.append([MatchIndexMapping(i, index_list[0])])
 
-        # Same for altered list
-        for altered_index in range(starting_match_index.index_altered,
-                                   len(text_altered)):
-            for original_index in range(starting_match_index.index_original,
-                                        len(text_original)):
-                if text_altered[altered_index] == text_original[original_index]:
-                    altered_first_match_index.index_original = original_index
-                    altered_first_match_index.index_altered = altered_index
-                    break
+    if debug:
+        print_all_results(results)
 
-            if altered_first_match_index.is_set():
-                break
+    # Return longest result
+    index_longest = -1
+    size_longest = -1
+    for index_results, result in enumerate(results):
+        if len(result) > size_longest:
+            index_longest = index_results
+            size_longest = len(result)
 
-        # No match found
-        if not original_first_match_index.is_set() and \
-                not altered_first_match_index.is_set():
-            break
-
-        # If a match is found in both loops, use the indexes for the match
-        # with the highest lower index from either list
-        match = get_match_with_highest_lower_index(original_first_match_index,
-                                                   altered_first_match_index)
-
-        results[match.index_original] = match.index_altered
-        starting_match_index.index_original = match.index_original + 1
-        starting_match_index.index_altered = match.index_altered + 1
-
-    return results
+    return results[index_longest]
 
 
-def visualize_match_array(original: bool, li, results):
-    i = -1
-    match = 0
-    str = ""
-    if original:
-        str += "Original: "
-    else:
-        str += "Altered: "
+if __name__ == "__main__":
+    l1 = [1, 2, 3, 4]
+    l2 = [1, 4, 2, 3]
 
-    for text in li:
-        i += 1
-        str += text
-        if (original and results[i]) or (not original and i in results.values):
-            match += 1
-            str += "[" + match + "]"
-        if len(li) != i + 1:
-            str += ", "
+    l1 = ["a", "b", "c", "d", "e", "f", "a"]
+    l2 = ["b", "c", "d", "e", "f", "a"]
 
-
-class MatchIndex:
-    def __init__(self, index_original, index_altered):
-        self.index_original = index_original
-        self.index_altered = index_altered
-
-    def is_set(self):
-        return self.index_original > -1 and self.index_altered > -1
-
-
-def get_match_with_highest_lower_index(x: MatchIndex, y: MatchIndex):
-    x_highest = x.index_original if x.index_original > x.index_altered else \
-        x.index_altered
-    y_highest = y.index_original if y.index_original > y.index_altered else \
-        y.index_altered
-    return x if (y_highest >= x_highest >= 0) else y
+    print("\nList 1: " + str(l1))
+    print("\nList 2: " + str(l2))
+    result = sequential_compare(l1, l2, True)
+    print("\nFinal Result:")
+    for match_index_mapping in result:
+        print(match_index_mapping)

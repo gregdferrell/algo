@@ -41,7 +41,7 @@ def sbd_2_memoize_set(ids: List):
 
 def sbd_3_bitwise(ids: List):
     """
-    Solution: Use bitwise XOR on each element and a variable.
+    Solution: Use bitwise XOR on a single variable for each element.
     Complexity:
         Time: O(n)
         Space: O(1)
