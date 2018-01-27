@@ -72,7 +72,8 @@ def sequential_compare(orig, alt, debug=False):
         for result in results:
             next_result = False
             for index in index_list:
-                for mim_index, match_index_mapping in enumerate(result):
+                for mim_index, match_index_mapping in reversed(
+                        list(enumerate(result))):
                     if index > match_index_mapping.value:
                         if len(result) - 1 == mim_index:
                             # Append this to the end of the result and go to the
@@ -87,7 +88,8 @@ def sequential_compare(orig, alt, debug=False):
                             forked_list = result[:mim_index + 1]
                             forked_list.append(MatchIndexMapping(i, index))
                             forked_results.append(forked_list)
-                            # break
+                            break
+
                 if next_result:
                     break
 
@@ -120,11 +122,8 @@ def sequential_compare(orig, alt, debug=False):
 
 
 if __name__ == "__main__":
-    l1 = [1, 2, 3, 4]
-    l2 = [1, 4, 2, 3]
-
-    l1 = ["a", "b", "c", "d", "e", "f", "a"]
-    l2 = ["b", "c", "d", "e", "f", "a"]
+    l1 = [1, 2, 3, 4, 5]
+    l2 = [1, 2, 4, 5, 3]
 
     print("\nList 1: " + str(l1))
     print("\nList 2: " + str(l2))
