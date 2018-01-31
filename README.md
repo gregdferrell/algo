@@ -1,10 +1,16 @@
-# fun-prob
-Solving fun problems with Python ...
+# problem-solve
+Problem Solve contains scripts and tests for random programming problems I have found and wanted to solve for learning and fun.
 
-#### Development Environment Setup
-* The project is built using Python 3.6.2.
+# Getting Started
+### Dependencies
+The project is built using Python 3.6.2.
+* pytest == 3.3.1
 
-#### Summary of Problems
+### Running Tests
+Execute: `py.test problems/<test_script_name.py>`
+
+# Summary of Problems Solved
+Each problem resides in its own python script and tests reside in a script matching the name prefixed with "test_."
 * compare_text_read.py: Compare original text vs what was altered and return a dict of indexes mapping the matching elements from the original text array to the altered text array.
 * get_num_islands.py: Find the number of islands in a 2 dimensional array.
 * get_permutations.py: Get all permutations of a given list of items.
