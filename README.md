@@ -3,8 +3,8 @@ Problem Solve contains scripts and tests for random programming problems I have 
 
 # Getting Started
 ### Dependencies
-The project is built using Python 3.6.2.
-* pytest == 3.3.1
+* Python 3.6.2
+* pytest==3.3.1
 
 ### Running Tests
 Execute: `py.test problems/<test_script_name.py>`
