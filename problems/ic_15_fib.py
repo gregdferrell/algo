@@ -55,19 +55,12 @@ def fib_3_iterative(n):
     if n < 0:
         raise ValueError('input must be a positive whole number')
 
-    if n in [0, 1]:
-        return n
+    x, y = 0, 1
 
-    p1 = 0
-    p2 = 1
-    return_val = 0
+    for i in range(n):
+        x, y = y, x + y
 
-    for _ in range(n - 1):
-        return_val = p1 + p2
-        p1 = p2
-        p2 = return_val
-
-    return return_val
+    return x
 
 
 def fib_4_binets_formula(n):
