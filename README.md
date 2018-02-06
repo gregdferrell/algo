@@ -1,5 +1,5 @@
 # problem-solve
-Problem Solve contains scripts and tests for random programming problems I have found and wanted to solve for learning and fun.
+I created this repo to be a place to solve interesting programming problems as I come across them. A focus is on writing clean, readable code that is efficient in terms of time and space utilization.
 
 # Getting Started
 ### Dependencies
