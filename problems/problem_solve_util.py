@@ -33,3 +33,12 @@ def binary_search(target, nums):
             first_index = target_index + 1
 
     return False
+
+
+class LinkedListNode:
+    """
+    Linked List Node
+    """
+    def __init__(self, value):
+        self.value = value
+        self.next = None

@@ -1,4 +1,4 @@
-from problem_solve_util import binary_search
+from problem_solve_util import binary_search, LinkedListNode
 
 
 def test_binary_search_out_of_bounds_smaller():
@@ -59,3 +59,21 @@ def test_binary_search_many_false():
     nums = [1, 3, 5, 7, 9, 11, 13]
     for num in nums:
         assert not binary_search(num + 1, nums)
+
+
+def test_linked_list():
+    a = LinkedListNode(1)
+    b = LinkedListNode(2)
+    c = LinkedListNode(3)
+    d = LinkedListNode(4)
+    # put b after a
+    a.next = b
+    # put c after b
+    b.next = c
+    # put d after c
+    c.next = d
+
+    assert a.value == 1
+    assert a.next.value == 2
+    assert a.next.next.value == 3
+    assert a.next.next.next.value == 4
