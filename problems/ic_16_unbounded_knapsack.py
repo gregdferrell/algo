@@ -25,7 +25,7 @@ def max_value_1_highest_weight_value_ratio(weight_value_tuples, max_capacity):
     This algorithm won't always find the right solution (see tests), but is
     much faster than the optimal solution and uses O(1) space.
     Complexity:
-        Time: O(n * logn) (where n=number of items) (sorting the input first)
+        Time: O(n * lg{n}) (where n=number of items) (sorting the input first)
         Space: O(1)
     """
     # Sort tuples by the highest weight to value ratio descending

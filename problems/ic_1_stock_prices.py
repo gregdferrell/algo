@@ -18,7 +18,7 @@ def stock_prices_1_brute_force(stock_prices):
         Space: O(1)
     """
     if len(stock_prices) < 2:
-        raise Exception('stock price list must be at least 2 items long')
+        raise ValueError('stock price list must be at least 2 items long')
 
     highest_profit = None
     for i, stock_price_purchased in enumerate(stock_prices):
@@ -39,7 +39,7 @@ def stock_prices_2_greedy(stock_prices):
         Space: O(1)
     """
     if len(stock_prices) < 2:
-        raise Exception('stock price list must be at least 2 items long')
+        raise ValueError('stock price list must be at least 2 items long')
 
     lowest_buy = None
     highest_profit = None
