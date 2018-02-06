@@ -30,7 +30,7 @@ def stock_prices_1_brute_force(stock_prices):
     return highest_profit
 
 
-def stock_prices_2(stock_prices):
+def stock_prices_2_greedy(stock_prices):
     """
     Solution: Iterate through stock prices once, keeping track of the
     highest profit and lowest buy.
