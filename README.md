@@ -15,6 +15,7 @@ Each problem resides in its own python script and tests reside in a script match
 * `get_num_islands.py`: Find the number of islands in a 2 dimensional array.
 * `get_permutations.py`: Get all permutations of a given list of items.
 * `ic_1_stock_prices.py`: Get the max profit given 1 purchase and 1 sale of a stock in a given day.
+* `ic_14_inflight_entertainment.py`: Given a list of numbers (movie times) and a flight length, find if 2 movie times in the list equal the total flight time.
 * `ic_15_fib.py`: Find the nth fibonacci number.
 * `ic_16_unbounded_knapsack.py`: Unbounded knapsack problem. Find the max value that can fit into a knapsack of a given weight, given a list of items each having a weight and value.
 * `ic_21_find_unique_int_in_list.py`: Given a list of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
