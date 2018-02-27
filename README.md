@@ -21,3 +21,4 @@ Each problem resides in its own python script and tests reside in a script match
 * `ic_21_find_unique_int_in_list.py`: Given a list of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
 * `ic_24_reverse_linked_list.py`: Given a head node of a singly-linked list, reverse it in place and return the new head node.
 * `ic_35_in_place_shuffle.py`: Write a function for doing an in-place shuffle of a list.
+* `ic_36_single_riffle_shuffle.py`: Write a function that tells us if a full deck of cards is a single riffle of two other halves.
