@@ -6,75 +6,75 @@ from math import pow, sqrt
 
 
 def fib_1_recursive(n):
-    """
-    Solution: Brute force recursive solution.
-    Complexity:
-        Description: Number of computations can be represented as a binary
-        tree has height of n.
-        Time: O(2^n)
-    """
-    if n < 0:
-        raise ValueError('input must be a positive whole number')
+	"""
+	Solution: Brute force recursive solution.
+	Complexity:
+		Description: Number of computations can be represented as a binary
+		tree has height of n.
+		Time: O(2^n)
+	"""
+	if n < 0:
+		raise ValueError('input must be a positive whole number')
 
-    if n in [0, 1]:
-        return n
+	if n in [0, 1]:
+		return n
 
-    return fib_1_recursive(n - 2) + fib_1_recursive(n - 1)
+	return fib_1_recursive(n - 2) + fib_1_recursive(n - 1)
 
 
 def fib_2_recursive_memoize(n, cache={}):
-    """
-    Solution: Recursive solution that memorizes previously computed
-    values by storing them in memory.
-    Complexity:
-        Time: O(n)
-        Space: O(n)
-    """
-    if n < 0:
-        raise ValueError('input must be a positive whole number')
+	"""
+	Solution: Recursive solution that memorizes previously computed
+	values by storing them in memory.
+	Complexity:
+		Time: O(n)
+		Space: O(n)
+	"""
+	if n < 0:
+		raise ValueError('input must be a positive whole number')
 
-    if n in [0, 1]:
-        return n
+	if n in [0, 1]:
+		return n
 
-    if n in cache:
-        return cache[n]
+	if n in cache:
+		return cache[n]
 
-    val = fib_2_recursive_memoize(n - 2, cache) + fib_2_recursive_memoize(n - 1,
-                                                                          cache)
-    cache[n] = val
-    return val
+	val = fib_2_recursive_memoize(n - 2, cache) + fib_2_recursive_memoize(n - 1,
+																		  cache)
+	cache[n] = val
+	return val
 
 
 def fib_3_iterative(n):
-    """
-    Solution: Iterative solution.
-    Complexity:
-        Time: O(n)
-        Space: O(1)
-    """
-    if n < 0:
-        raise ValueError('input must be a positive whole number')
+	"""
+	Solution: Iterative solution.
+	Complexity:
+		Time: O(n)
+		Space: O(1)
+	"""
+	if n < 0:
+		raise ValueError('input must be a positive whole number')
 
-    x, y = 0, 1
+	x, y = 0, 1
 
-    for i in range(n):
-        x, y = y, x + y
+	for i in range(n):
+		x, y = y, x + y
 
-    return x
+	return x
 
 
 def fib_4_binets_formula(n):
-    """
-    Solution (cheat): Use Binet's formula.
-    Sometimes math just wins.
-    Complexity:
-        Time: O(1)
-        Space: O(1)
-    """
-    if n < 0:
-        raise ValueError('input must be a positive whole number')
+	"""
+	Solution (cheat): Use Binet's formula.
+	Sometimes math just wins.
+	Complexity:
+		Time: O(1)
+		Space: O(1)
+	"""
+	if n < 0:
+		raise ValueError('input must be a positive whole number')
 
-    v1 = 1 / sqrt(5)
-    v2 = pow((1 + sqrt(5)) / 2, n)
-    v3 = pow((1 - sqrt(5)) / 2, n)
-    return int(v1 * (v2 - v3))
+	v1 = 1 / sqrt(5)
+	v2 = pow((1 + sqrt(5)) / 2, n)
+	v3 = pow((1 - sqrt(5)) / 2, n)
+	return int(v1 * (v2 - v3))
