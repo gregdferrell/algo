@@ -51,13 +51,16 @@ class BinaryTreeNode:
 	Binary Tree Node
 	"""
 
-	def __init__(self, value):
+	def __init__(self, value, parent):
 		self.value = value
 		self.left = None
 		self.right = None
+		self.parent = parent
 
 	def insert_left(self, value):
-		self.left = BinaryTreeNode(value)
+		self.left = BinaryTreeNode(value, self)
+		return self.left
 
 	def insert_right(self, value):
-		self.right = BinaryTreeNode(value)
+		self.right = BinaryTreeNode(value, self)
+		return self.right
