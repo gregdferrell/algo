@@ -26,5 +26,6 @@ Each problem resides in its own python script and tests reside in a script match
 * `ic_29_bracket_validator.py`: Write an efficient function that tells us whether or not an input string's openers and closers are properly nested.
 * `ic_35_in_place_shuffle.py`: Write a function for doing an in-place shuffle of a list.
 * `ic_36_single_riffle_shuffle.py`: Write a function that tells us if a full deck of cards is a single riffle of two other halves.
+* `ic_42_find_duplicate_files.py`: File all duplicate files (having different names) given a base directory.
 * `ic_43_merge_sorted_arrays.py`: Merge two sorted arrays into one sorted array.
 * `ic_45_graph_coloring.py`: Given an undirected graph with maximum degree, find a graph coloring using at most D+1 colors.
