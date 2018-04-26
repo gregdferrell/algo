@@ -20,6 +20,7 @@ Each problem resides in its own python script and tests reside in a script match
 * `ic_15_fib.py`: Find the nth fibonacci number.
 * `ic_16_unbounded_knapsack.py`: Unbounded knapsack problem. Find the max value that can fit into a knapsack of a given weight, given a list of items each having a weight and value.
 * `ic_21_find_unique_int_in_list.py`: Given a list of IDs, which contains many duplicate integers and one unique integer, find the unique integer.
+* `ic_23_linked_cycle.py`: Find if a Linked List has a cycle.
 * `ic_24_reverse_linked_list.py`: Given a head node of a singly-linked list, reverse it in place and return the new head node.
 * `ic_25_linked_list_nth_last_node.py`: Given a head node of a singly-linked list, find the nth to last node.
 * `ic_27_reverse_words.py`: Create a function that takes a message as a list of characters and reverses the order of the words in-place.
