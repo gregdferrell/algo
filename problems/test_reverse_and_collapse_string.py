@@ -1,4 +1,4 @@
-from reverse_and_collapse_string import reverse_and_collapse
+from .reverse_and_collapse_string import reverse_and_collapse
 
 
 def test_reverse_and_collapse_1():

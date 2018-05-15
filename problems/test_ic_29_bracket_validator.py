@@ -1,4 +1,4 @@
-from ic_29_bracket_validator import bracket_validator
+from .ic_29_bracket_validator import bracket_validator
 
 
 def test_bracket_validator_paren():

@@ -1,5 +1,5 @@
-from ic_25_linked_list_nth_last_node import nth_to_last_node
-from problem_solve_util import LinkedListNode
+from .ic_25_linked_list_nth_last_node import nth_to_last_node
+from .problem_solve_util import LinkedListNode
 
 
 def test_nth_to_last_node():

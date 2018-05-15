@@ -1,4 +1,4 @@
-from ic_1_stock_prices import stock_prices_1_brute_force, stock_prices_2_greedy
+from .ic_1_stock_prices import stock_prices_1_brute_force, stock_prices_2_greedy
 
 
 def test_stock_price_algorithms_lose():

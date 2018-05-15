@@ -5,7 +5,7 @@
 # returns the largest element in the stack. Assume the stack contains only integers.
 #
 
-from problem_solve_util import Stack
+from .problem_solve_util import Stack
 
 
 class MaxStackIterate(Stack):

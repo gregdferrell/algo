@@ -8,7 +8,7 @@
 # flight_length: 180 minutes
 # return = True (75 + 105)
 #
-from problem_solve_util import binary_search
+from .problem_solve_util import binary_search
 
 
 def flight_time_movies_1_brute_force(movie_lengths, flight_length):

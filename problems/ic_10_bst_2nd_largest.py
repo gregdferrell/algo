@@ -2,7 +2,7 @@
 # Problem: Find the 2nd largest item in a binary search tree.
 #
 
-from problem_solve_util import BinaryTreeNode
+from .problem_solve_util import BinaryTreeNode
 
 
 def find_largest_item_bst(root_node: BinaryTreeNode):

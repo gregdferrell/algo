@@ -1,4 +1,4 @@
-from compare_text_read import compare_text, get_all_possible_mappings
+from .compare_text_read import compare_text, get_all_possible_mappings
 
 
 def test_get_all_possible_mappings_1():

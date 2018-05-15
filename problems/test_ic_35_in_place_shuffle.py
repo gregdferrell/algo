@@ -1,6 +1,6 @@
 from collections import Counter
 
-from ic_35_in_place_shuffle import shuffle_1
+from .ic_35_in_place_shuffle import shuffle_1
 
 
 def test_shuffle_1():

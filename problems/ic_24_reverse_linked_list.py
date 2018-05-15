@@ -6,7 +6,7 @@
 # Your function will have one input: the head of the list.
 # Your function should return the new head of the list.
 #
-from problem_solve_util import LinkedListNode
+from .problem_solve_util import LinkedListNode
 
 
 def reverse_linked_list(head_node: LinkedListNode):

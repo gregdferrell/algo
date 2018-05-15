@@ -1,4 +1,4 @@
-from get_permutations import get_permutations_f1
+from .get_permutations import get_permutations_f1
 
 
 def test_get_permutations_f1_sz1():

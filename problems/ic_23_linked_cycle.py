@@ -2,7 +2,7 @@
 # Problem: Find if a Linked List has a cycle.
 #
 
-from problem_solve_util import LinkedListNode
+from .problem_solve_util import LinkedListNode
 
 
 def contains_cycle_set_impl(head_node: LinkedListNode):

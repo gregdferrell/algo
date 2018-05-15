@@ -2,7 +2,7 @@
 # Problem: Given a head node of a singly-linked list, find the nth to last node.
 #
 
-from problem_solve_util import LinkedListNode
+from .problem_solve_util import LinkedListNode
 
 
 def nth_to_last_node(n_back: int, head_node: LinkedListNode) -> LinkedListNode:

@@ -1,4 +1,4 @@
-from get_num_islands import find_number_of_islands
+from .get_num_islands import find_number_of_islands
 
 
 def test_find_number_of_islands_zero():

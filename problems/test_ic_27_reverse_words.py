@@ -1,4 +1,4 @@
-from ic_27_reverse_words import reverse_characters, reverse_words
+from .ic_27_reverse_words import reverse_characters, reverse_words
 
 
 def test_reverse_characters():

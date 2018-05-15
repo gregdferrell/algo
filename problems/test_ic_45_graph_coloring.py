@@ -1,7 +1,7 @@
 import pytest
 
-from ic_45_graph_coloring import color_graph_first_available_slightly_faster
-from problem_solve_util import GraphNode
+from .ic_45_graph_coloring import color_graph_first_available_slightly_faster
+from .problem_solve_util import GraphNode
 
 colors = ['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'orange']
 

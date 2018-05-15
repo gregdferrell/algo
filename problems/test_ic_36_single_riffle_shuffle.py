@@ -1,4 +1,4 @@
-from ic_36_single_riffle_shuffle import single_riffle_shuffle_1
+from .ic_36_single_riffle_shuffle import single_riffle_shuffle_1
 
 
 def test_single_riffle_shuffle_1_empty_deck():

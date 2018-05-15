@@ -1,4 +1,4 @@
-from problem_solve_util import binary_search, LinkedListNode
+from .problem_solve_util import binary_search, LinkedListNode
 
 
 def test_binary_search_out_of_bounds_smaller():

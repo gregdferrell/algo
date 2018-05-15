@@ -1,7 +1,7 @@
 import pytest
 
-from ic_10_bst_2nd_largest import find_second_largest_item_bst, find_second_largest_item_bst_no_parent
-from problem_solve_util import BinaryTreeNode
+from .ic_10_bst_2nd_largest import find_second_largest_item_bst, find_second_largest_item_bst_no_parent
+from .problem_solve_util import BinaryTreeNode
 
 
 def test_find_second_largest_item_bst_not_enough_items():

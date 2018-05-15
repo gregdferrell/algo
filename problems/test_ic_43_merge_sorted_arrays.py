@@ -1,6 +1,6 @@
 import pytest
 
-from ic_43_merge_sorted_arrays import merge_sorted_arrays
+from .ic_43_merge_sorted_arrays import merge_sorted_arrays
 
 
 def test_merge_sorted_arrays_empty_lists():
