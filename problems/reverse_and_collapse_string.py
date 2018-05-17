@@ -28,3 +28,10 @@ def reverse_and_collapse(in_str: str) -> str:
 			out_str += in_str[i]
 
 	return out_str
+
+
+if __name__ == '__main__':
+	in_str = 'yylllletinifEEED eeem Llllaac'
+	out_str = reverse_and_collapse(in_str)
+	print(out_str)
+	assert reverse_and_collapse(in_str) == 'calL me DEfinitely'

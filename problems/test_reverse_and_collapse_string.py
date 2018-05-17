@@ -19,3 +19,8 @@ def test_reverse_and_collapse_3():
 def test_reverse_and_collapse_4():
 	in_str = 'svsddvsvvssvvdsdssddvvvvds'
 	assert reverse_and_collapse(in_str) == 'sdvdsdsdvsvsvdsvs'
+
+
+def test_reverse_and_collapse_5():
+	in_str = 'yylllletinifEEED eeem Llllaac'
+	assert reverse_and_collapse(in_str) == 'calL me DEfinitely'
