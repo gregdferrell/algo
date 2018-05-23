@@ -11,6 +11,7 @@ Execute: `py.test problems/<test_script_name.py>`
 
 # Summary of Problems Solved
 Each problem resides in its own python script and tests reside in a script matching the name prefixed with "test_."
+* `avoid_spike.py`: Test if we can stop on a spike runway, avoiding all spikes.
 * `compare_text_read.py`: Compare original text vs what was altered and return a dict of indexes mapping the matching elements from the original text array to the altered text array.
 * `get_num_islands.py`: Find the number of islands in a 2 dimensional array.
 * `get_permutations.py`: Get all permutations of a given list of items.
