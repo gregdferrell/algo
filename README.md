@@ -16,6 +16,7 @@ Each problem resides in its own python script and tests reside in a script match
 * `get_num_islands.py`: Find the number of islands in a 2 dimensional array.
 * `get_permutations.py`: Get all permutations of a given list of items.
 * `ic_1_stock_prices.py`: Get the max profit given 1 purchase and 1 sale of a stock in a given day.
+* `ic_8_balanced_binary_tree.py`: Write a function to see if the difference between the depths of any two leaf nodes is no greater than one.
 * `ic_10_bst_2nd_largest.py`: Find the 2nd largest item in a binary search tree.
 * `ic_14_inflight_entertainment.py`: Given a list of numbers (movie times) and a flight length, find if 2 movie times in the list equal the total flight time.
 * `ic_15_fib.py`: Find the nth fibonacci number.
