@@ -36,4 +36,5 @@ Each problem resides in its own python script and tests reside in a script match
 * `ic_45_graph_coloring.py`: Given an undirected graph with maximum degree, find a graph coloring using at most D+1 colors.
 * `ic_valid_bst.py`: Write a function to check that a binary tree is a valid binary search tree.
 * `ic_rand5_w_rand7.py`: Write a function that generates a random int from 1-5 using a function that generates a random int from 1-7.
+* `ic_rand7_w_rand5.py`: Write a function that generates a random int from 1-7 using a function that generates a random int from 1-5.
 * `reverse_and_collapse_string.py`: Write a method which takes a string as an argument and returns its reverse, collapsing any adjacent duplicate characters.
