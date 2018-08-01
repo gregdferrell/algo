@@ -47,10 +47,6 @@ def find_shortest_route(network: Dict, node_start: str, node_end: str):
 	nodes_to_visit = deque()
 	nodes_to_visit.append(node_start)
 
-	# Keep track of what nodes we've already seen
-	# so we don't process them twice
-	nodes_already_seen = {node_start}
-
 	nodes_how_reached = {node_start: None}
 
 	while len(nodes_to_visit) > 0:
@@ -62,8 +58,7 @@ def find_shortest_route(network: Dict, node_start: str, node_end: str):
 			break
 
 		for neighbor in network[current_node]:
-			if neighbor not in nodes_already_seen:
-				nodes_already_seen.add(neighbor)
+			if neighbor not in nodes_how_reached:
 				nodes_to_visit.append(neighbor)
 				nodes_how_reached[neighbor] = current_node
 
