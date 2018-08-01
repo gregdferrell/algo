@@ -67,6 +67,10 @@ class BinaryTreeNode:
 
 
 class GraphNode:
+	"""
+	Graph Node
+	"""
+
 	def __init__(self, label):
 		self.label = label
 		self.neighbors = set()
