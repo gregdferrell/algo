@@ -13,6 +13,7 @@ Execute: `py.test problems/<test_script_name.py>`
 Each problem resides in its own python script and tests reside in a script matching the name prefixed with "test_."
 * `avoid_spike.py`: Test if we can stop on a spike runway, avoiding all spikes.
 * `compare_text_read.py`: Compare original text vs what was altered and return a dict of indexes mapping the matching elements from the original text array to the altered text array.
+* `find_smallest_positive_int.py`: Given an array of integers, find the smallest positive integer not in the array.
 * `get_num_islands.py`: Find the number of islands in a 2 dimensional array.
 * `get_permutations.py`: Get all permutations of a given list of items.
 * `ic_1_stock_prices.py`: Get the max profit given 1 purchase and 1 sale of a stock in a given day.
